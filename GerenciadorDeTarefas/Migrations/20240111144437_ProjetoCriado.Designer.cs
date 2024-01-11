@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GerenciadorDeTarefas.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240108232847_ProjetoCriado")]
+    [Migration("20240111144437_ProjetoCriado")]
     partial class ProjetoCriado
     {
         /// <inheritdoc />
@@ -21,7 +21,7 @@ namespace GerenciadorDeTarefas.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("App")
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);

@@ -5,17 +5,17 @@ using Microsoft.EntityFrameworkCore;
 namespace GerenciadorDeTarefas.Repositories;
 
 /// <summary>
-///     Repositório de tarefas (<see cref="Tarefa" />), que implementa a interface <see cref="ITarefaRepository" />.
+///     Repositório de tarefas (<see cref="Tarefa" />), que implementa a interface <see cref="ITarefasRepository" />.
 /// </summary>
 /// <remarks>
 ///     Todos os seus métodos são assíncronos. Portanto, utilize <see langword="await" /> para garantir
 ///     que quaisquer operações assíncronas foram concluídas antes de chamar outro método neste contexto.
 /// </remarks>
-public class TarefaRepository : ITarefaRepository
+public class TarefasRepository : ITarefasRepository
 {
     public ApplicationDbContext _context;
 
-    public TarefaRepository(ApplicationDbContext context)
+    public TarefasRepository(ApplicationDbContext context)
     {
         _context = context;
     }

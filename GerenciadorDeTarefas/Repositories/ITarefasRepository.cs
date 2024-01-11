@@ -3,7 +3,7 @@
 namespace GerenciadorDeTarefas.Repositories;
 
 /// <summary>Interface padrão para um repositório de tarefas.</summary>
-public interface ITarefaRepository
+public interface ITarefasRepository
 {
     /// <summary>
     ///     Busca, de forma assíncrona, todas as tarefas cadastradas.

@@ -4,26 +4,13 @@ using GerenciadorDeTarefas.Models;
 using GerenciadorDeTarefas.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using Xunit.Abstractions;
-using Xunit.Sdk;
 
 namespace GerenciadorDeTarefas.Test;
 
 public class TarefasControllerTest
 {
-    private readonly ITestOutputHelper _testOutputHelper;
     private readonly TarefasController _tarefasController;
-    private Tarefa _tarefaNaoCadastrada = new()
-    {
-        Id = 0,
-        Nome = "Tarefa Não Cadastrada",
-        Descricao = "...",
-        Importancia = Importancia.Alta,
-        Prazo = new DateTime(2024, 1, 1, 12, 0, 0),
-        DataDoCadastro = new DateTime(2024, 1, 1, 10, 0, 0),
-        DataDaConclusao = new DateTime(2024, 1, 1, 12, 0, 0),
-    };
-    private Tarefa _tarefaCadastrada = new()
+    private readonly Tarefa _tarefaCadastrada = new()
     {
         Id = 1,
         Nome = "Tarefa Cadastrada",
@@ -34,12 +21,10 @@ public class TarefasControllerTest
         DataDaConclusao = null,
     };
 
-    public TarefasControllerTest(ITestOutputHelper testOutputHelper)
+    public TarefasControllerTest()
     {
-        _testOutputHelper = testOutputHelper;
-
         // Default Arrange
-        var mockTarefaRepository = new Mock<ITarefaRepository>();
+        var mockTarefaRepository = new Mock<ITarefasRepository>();
         mockTarefaRepository.Setup(m => m.BuscarTodasAsync()).ReturnsAsync(new List<Tarefa>() { _tarefaCadastrada });
         mockTarefaRepository.Setup(m => m.BuscarPorIdAsync(It.Is<long>(id => id != 1))).ReturnsAsync(() => null);
         mockTarefaRepository.Setup(m => m.BuscarPorIdAsync(It.Is<long>(id => id == 1))).ReturnsAsync(_tarefaCadastrada);
@@ -56,7 +41,7 @@ public class TarefasControllerTest
     public async void GetTarefasDeveRetornarListaVazia()
     {
         // Arrange
-        var mockTarefaRepository = new Mock<ITarefaRepository>();
+        var mockTarefaRepository = new Mock<ITarefasRepository>();
         mockTarefaRepository.Setup(m => m.BuscarTodasAsync()).ReturnsAsync(new List<Tarefa>());
         var tarefasController = new TarefasController(mockTarefaRepository.Object);
 

@@ -9,9 +9,9 @@ namespace GerenciadorDeTarefas.Controllers;
 [ApiController]
 public class TarefasController : ControllerBase
 {
-    private readonly ITarefaRepository _tarefaRepository;
+    private readonly ITarefasRepository _tarefaRepository;
 
-    public TarefasController(ITarefaRepository tarefaRepository)
+    public TarefasController(ITarefasRepository tarefaRepository)
     {
         _tarefaRepository = tarefaRepository;
     }
