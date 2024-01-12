@@ -1,0 +1,105 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "be6e218d-2aa3-4fcf-88ef-3d2acf7dafdb"
+        },
+        "name": {
+            "value": "webappfiaptechchallenge"
+        },
+        "location": {
+            "value": "Brazil South"
+        },
+        "hostingPlanName": {
+            "value": "ASP-rgfiap-8945"
+        },
+        "serverFarmResourceGroup": {
+            "value": "rg-fiap"
+        },
+        "databaseName": {
+            "value": "webappfiaptechchallenge-database"
+        },
+        "ftpsState": {
+            "value": "FtpsOnly"
+        },
+        "sku": {
+            "value": "Basic"
+        },
+        "skuCode": {
+            "value": "B1"
+        },
+        "workerSize": {
+            "value": ""
+        },
+        "workerSizeId": {
+            "value": ""
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "linuxFxVersion": {
+            "value": "DOTNETCORE|8.0"
+        },
+        "collation": {
+            "value": "SQL_Latin1_General_CP1_CI_AS"
+        },
+        "sqlDbSkuName": {
+            "value": "GP_S_Gen5_1"
+        },
+        "sqlDbTierName": {
+            "value": "GeneralPurpose"
+        },
+        "serverName": {
+            "value": "webappfiaptechchallenge-server"
+        },
+        "serverUsername": {
+            "value": "webappfiaptechchallenge-server-admin"
+        },
+        "serverPassword": {
+            "value": null
+        },
+        "vnetName": {
+            "value": "webappfiaptechchallengeVnet"
+        },
+        "privateEndpointSubnet": {
+            "value": "webappfiaptechchallengeSubnet"
+        },
+        "subnetForApp": {
+            "value": "webappfiaptechchallengeAppSubnet"
+        },
+        "subnetForDb": {
+            "value": ""
+        },
+        "privateEndpointNameForApp": {
+            "value": "webappfiaptechchallengeAppEndpoint"
+        },
+        "privateEndpointNameForDb": {
+            "value": "webappfiaptechchallengeDbEndpoint"
+        },
+        "privateEndpointNameForCache": {
+            "value": "webappfiaptechchallenge-cache-privateEndpoint"
+        },
+        "privateDnsZoneNameForApp": {
+            "value": "privatelink.azurewebsites.net"
+        },
+        "privateDnsZoneNameForDb": {
+            "value": "privatelink.database.windows.net"
+        },
+        "privateDnsZoneNameForCache": {
+            "value": "privatelink.redis.cache.windows.net"
+        },
+        "isVnetEnabled": {
+            "value": true
+        },
+        "isPrivateEndpointForAppEnabled": {
+            "value": false
+        },
+        "isCacheEnabled": {
+            "value": false
+        },
+        "cacheName": {
+            "value": "webappfiaptechchallenge-cache"
+        }
+    }
+}
